@@ -1,0 +1,26 @@
+name: Build-The-Package
+on:
+  push:
+    branches:
+      - main
+jobs:
+  widget-build-action:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: "12.x"
+      - name: Install dependencies
+        run: |
+          npm install
+        ##   Here is this Action
+      - uses: ahwelgemoed/mendix-widget-build-action@main
+        with:
+          author_name: build-bot
+          branch_to_push_to: main
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          bot_commit_message: bot-version-match
+          bot_author_name: build-bot
+          bot_author_email: build-bot@mendix.com
