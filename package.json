@@ -1,7 +1,7 @@
 {
     "name": "appguide",
     "widgetName": "AppGuide",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "My widget description",
     "copyright": "2020 Mendix Technology BV",
     "author": "Arno Welgemoed",
