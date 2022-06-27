@@ -46,7 +46,11 @@ export default class ReactAppGuide extends Component<ReactAppGuideContainerProps
             primaryColor,
             showSkipButton,
             showProgress,
-            isPageCall
+            isPageCall,
+            backButtonText,
+            nextButtonText,
+            skipButtonText,
+            completeButtonText
         } = this.props;
         const { display } = this.state;
 
@@ -66,6 +70,10 @@ export default class ReactAppGuide extends Component<ReactAppGuideContainerProps
                 showProgress={showProgress}
                 userWelcome={userWelcome}
                 isPageCall={isPageCall}
+                backButtonText={backButtonText}
+                nextButtonText={nextButtonText}
+                skipButtonText={skipButtonText}
+                completeButtonText={completeButtonText}
             />
         );
     }

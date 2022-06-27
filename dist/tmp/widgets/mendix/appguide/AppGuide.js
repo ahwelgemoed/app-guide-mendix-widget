@@ -73,7 +73,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "a0e1469eb79636ecad08";
+/******/ 	var hotCurrentHash = "b7a6368ef6b736db3b10";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -9593,12 +9593,12 @@ var ReactAppGuide = /** @class */ (function (_super) {
         }
     };
     ReactAppGuide.prototype.render = function () {
-        var _a = this.props, textColor = _a.textColor, listOfSteps = _a.listOfSteps, tabIndex = _a.tabIndex, arrowColor = _a.arrowColor, overlayColor = _a.overlayColor, backgroundColor = _a.backgroundColor, userWelcome = _a.userWelcome, primaryColor = _a.primaryColor, showSkipButton = _a.showSkipButton, showProgress = _a.showProgress, isPageCall = _a.isPageCall;
+        var _a = this.props, textColor = _a.textColor, listOfSteps = _a.listOfSteps, tabIndex = _a.tabIndex, arrowColor = _a.arrowColor, overlayColor = _a.overlayColor, backgroundColor = _a.backgroundColor, userWelcome = _a.userWelcome, primaryColor = _a.primaryColor, showSkipButton = _a.showSkipButton, showProgress = _a.showProgress, isPageCall = _a.isPageCall, backButtonText = _a.backButtonText, nextButtonText = _a.nextButtonText, skipButtonText = _a.skipButtonText, completeButtonText = _a.completeButtonText;
         var display = this.state.display;
         if (!display) {
             return null;
         }
-        return (Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_components_JoyrideInit__WEBPACK_IMPORTED_MODULE_1__["default"], { showSkipButton: showSkipButton, listOfSteps: listOfSteps, tabIndex: tabIndex, arrowColor: arrowColor, backgroundColor: backgroundColor, primaryColor: primaryColor, overlayColor: overlayColor, textColor: textColor, showProgress: showProgress, userWelcome: userWelcome, isPageCall: isPageCall }));
+        return (Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_components_JoyrideInit__WEBPACK_IMPORTED_MODULE_1__["default"], { showSkipButton: showSkipButton, listOfSteps: listOfSteps, tabIndex: tabIndex, arrowColor: arrowColor, backgroundColor: backgroundColor, primaryColor: primaryColor, overlayColor: overlayColor, textColor: textColor, showProgress: showProgress, userWelcome: userWelcome, isPageCall: isPageCall, backButtonText: backButtonText, nextButtonText: nextButtonText, skipButtonText: skipButtonText, completeButtonText: completeButtonText }));
     };
     return ReactAppGuide;
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"]));
@@ -9624,7 +9624,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var JoyrideInit = function (_a) {
-    var listOfSteps = _a.listOfSteps, showSkipButton = _a.showSkipButton, showProgress = _a.showProgress, userWelcome = _a.userWelcome, isPageCall = _a.isPageCall, arrowColor = _a.arrowColor, overlayColor = _a.overlayColor, textColor = _a.textColor, primaryColor = _a.primaryColor, backgroundColor = _a.backgroundColor;
+    var listOfSteps = _a.listOfSteps, showSkipButton = _a.showSkipButton, showProgress = _a.showProgress, userWelcome = _a.userWelcome, isPageCall = _a.isPageCall, arrowColor = _a.arrowColor, overlayColor = _a.overlayColor, textColor = _a.textColor, primaryColor = _a.primaryColor, backgroundColor = _a.backgroundColor, backButtonText = _a.backButtonText, nextButtonText = _a.nextButtonText, skipButtonText = _a.skipButtonText, completeButtonText = _a.completeButtonText;
     var formattedList = Object(_utils__WEBPACK_IMPORTED_MODULE_2__["reFormattedList"])(listOfSteps);
     var _b = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0), stepCounter = _b[0], setStepCounter = _b[1];
     var _areYouDone = function (data) {
@@ -9655,7 +9655,18 @@ var JoyrideInit = function (_a) {
     return (Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", null,
         Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])(react_joyride__WEBPACK_IMPORTED_MODULE_1__["default"], { stepIndex: stepCounter, callback: _areYouDone, steps: formattedList, run: true, continuous: true, disableScrollParentFix: true, disableScrolling: false, scrollToFirstStep // Decided Not To make User Changeable
             : true, disableOverlayClose // Decided Not To make User Changeable
-            : true, showProgress: showProgress, showSkipButton: showSkipButton, locale: { last: isPageCall ? "Next" : "Complete" }, styles: {
+            : true, showProgress: showProgress, showSkipButton: showSkipButton, locale: {
+                last: isPageCall
+                    ? nextButtonText
+                        ? nextButtonText
+                        : "Next"
+                    : completeButtonText
+                        ? completeButtonText
+                        : "Complete",
+                back: backButtonText ? backButtonText : "Back",
+                skip: skipButtonText ? skipButtonText : "Skip",
+                next: nextButtonText ? nextButtonText : "Next"
+            }, styles: {
                 buttonClose: {
                     display: "none"
                 },

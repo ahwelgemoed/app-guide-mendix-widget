@@ -89,6 +89,22 @@
                 <caption>Overlay Color</caption>
                 <description></description>
             </property>
+            <property type="string" key="backButtonText" required="false">
+                <caption>Back button text</caption>
+                <description></description>
+            </property>
+            <property type="string" key="nextButtonText" required="false">
+                <caption>Next button text</caption>
+                <description></description>
+            </property>
+            <property type="string" key="skipButtonText" required="false">
+                <caption>Skip button text</caption>
+                <description></description>
+            </property>
+            <property type="string" key="completeButtonText" required="false">
+                <caption>Complete button text</caption>
+                <description></description>
+            </property>
         </propertyGroup>
     </properties>
 </widget>
