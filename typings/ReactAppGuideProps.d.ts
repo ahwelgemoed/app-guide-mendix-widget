@@ -38,6 +38,10 @@ export interface ReactAppGuideContainerProps {
     primaryColor: string;
     backgroundColor: string;
     overlayColor: string;
+    backButtonText: string;
+    nextButtonText: string;
+    skipButtonText: string;
+    completeButtonText: string;
 }
 
 export interface ReactAppGuidePreviewProps {
@@ -54,4 +58,8 @@ export interface ReactAppGuidePreviewProps {
     primaryColor: string;
     backgroundColor: string;
     overlayColor: string;
+    backButtonText: string;
+    nextButtonText: string;
+    skipButtonText: string;
+    completeButtonText: string;
 }

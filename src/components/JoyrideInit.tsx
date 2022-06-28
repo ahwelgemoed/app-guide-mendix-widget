@@ -14,7 +14,11 @@ const JoyrideInit = ({
     overlayColor,
     textColor,
     primaryColor,
-    backgroundColor
+    backgroundColor,
+    backButtonText,
+    nextButtonText,
+    skipButtonText,
+    completeButtonText
 }: ExcludedReactAppGuideContainerProps): ReactElement => {
     const formattedList = reFormattedList(listOfSteps);
     const [stepCounter, setStepCounter] = useState<number>(0);
@@ -60,7 +64,18 @@ const JoyrideInit = ({
                 disableOverlayClose // Decided Not To make User Changeable
                 showProgress={showProgress}
                 showSkipButton={showSkipButton}
-                locale={{ last: isPageCall ? "Next" : "Complete" }}
+                locale={{
+                    last: isPageCall
+                        ? nextButtonText
+                            ? nextButtonText
+                            : "Next"
+                        : completeButtonText
+                        ? completeButtonText
+                        : "Complete",
+                    back: backButtonText ? backButtonText : "Back",
+                    skip: skipButtonText ? skipButtonText : "Skip",
+                    next: nextButtonText ? nextButtonText : "Next"
+                }}
                 styles={{
                     buttonClose: {
                         display: "none"
